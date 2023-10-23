@@ -1,7 +1,7 @@
 $(function () {
   "use strict";
 
-  $(".formForContact").on("submit", function (event) {
+  $("#FormContact").on("submit", function (event) {
     event.preventDefault();
     event.stopPropagation();
     var name = $("#name").val();
