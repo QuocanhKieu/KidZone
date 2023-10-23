@@ -1,0 +1,277 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="file_style.css">
+</head>
+
+<body>
+    <div id="feedback">
+        <div id="wrappertop">
+            <div class="containertop">
+                <!-- phan tieu de -->
+                <h1 id="feedbackcolor">FEEDBACK</h1>
+            </div>
+            <div class="containerbot">
+                <p>Thanks for taking the time to answer a few short questions. Your feedback is extremely important to
+                    us, and many of Kids-Zone's features are a direct result of comments we have received through this
+                    form.
+                    We appreciate your help!</p>
+                <p>All fields in this form are optional and if you need technical assistance, please contact
+                    <u>Kids-Zone Support</u>.
+                </p>
+            </div>
+        </div>
+        <div id="wrapperbot">
+            <div id="pick_caption">
+                CHOOSE YOUR ROLE
+            </div>
+            <!-- tab link -->
+            <div class="urselect">
+                <button id="BUTTON_P1" class="tablinks active" data-electronic="PARENT">
+                    PARENT
+                </button>
+                <button id="BUTTON_T2" class="tablinks" data-electronic="TEACHER">
+                    TEACHER
+                </button>
+            </div>
+            <div id="INFO">
+                <form id="contact_info">
+                    <h2 id="enter">
+                        Enter Your Contact Information
+                    </h2>
+                    <div class="colleft">
+                        <div class="colleftcon">
+                            <label for="name">Name</label>
+                            <input id="name" type="text" placeholder="Name" name="name" value="">
+                        </div>
+                    </div>
+                    <div class="colright">
+                        <div class="colrightcon">
+                            <label for="email">Email</label>
+                            <input id="email" type="text" placeholder="Email" name="email" value="">
+                        </div>
+                    </div>
+                    <div class="colleft">
+                        <div class="colleftcon">
+                            <label for="city">City</label>
+                            <input id="city" type="text" placeholder="City" name="city" value="">
+                        </div>
+                    </div>
+                    <div class="colright">
+                        <div class="colrightcon">
+                            <label for="state">State</label>
+                            <input id="state" type="text" placeholder="State" name="state" />
+                        </div>
+                    </div>
+                    <div id="colbot">
+                        <div id="country">Country</div>
+                        <div id="undercountry">
+                            <div>
+                                <input id="downshift-2-input" placeholder="Enter here" aria-activedescendant=""
+                                    aria-autocomplete="list" aria-controls="downshift-2-menu" aria-expanded="false"
+                                    aria-labelledby="downshift-2-label" autocomplete="off" role="combobox" value="">
+                            </div>
+                            <ul id="downshift-2-menu" role="listbox" aria-labelledby="downshift-2-label"
+                                class="select-suggestions-container suggestions-list"></ul>
+                        </div>
+                    </div>
+                    <h2 id="leavecomment">
+                        Leave Your Comments and Suggestions
+                    </h2>
+                    <div class="wrapper_tabcontent">
+                        <div id="PARENT" class="tabcontent active">
+                            <div class="form_field">
+                                <div class="form_field_ques">
+                                    Tell us about yourself or your family.
+                                </div>
+                                <div class="form_field_con">
+                                    <textarea class="qes_form" name="q-parent-0">
+                                        </textarea>
+                                </div>
+                            </div>
+                            <div class="form_field">
+                                <div class="form_field_ques">
+                                    How does your family use Kids-Zone?
+                                </div>
+                                <div class="form_field_con">
+                                    <textarea class="qes_form" name="q-parent-1">
+                                        </textarea>
+                                </div>
+                            </div>
+                            <div class="form_field">
+                                <div class="form_field_ques">
+                                    How has Kids-Zone helped your children become more successful learners?
+                                </div>
+                                <div class="form_field_con">
+                                    <textarea class="qes_form" name="q-parent-2">
+                                        </textarea>
+                                </div>
+                            </div>
+                            <div class="form_field">
+                                <div class="form_field_ques">
+                                    What are your biggest challenges as a parent?
+                                </div>
+                                <div class="form_field_con">
+                                    <textarea class="qes_form" name="q-parent-3">
+                                        </textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="TEACHER" class="tabcontent">
+                            <div class="form_field">
+                                <div class="form_field_ques">
+                                    Tell us about yourself and your students. What grade levels, subjects do you teach?
+                                </div>
+                                <div class="form_field_con">
+                                    <textarea class="qes_form" name="q-parent-0">
+                                        </textarea>
+                                </div>
+                            </div>
+                            <div class="form_field">
+                                <div class="form_field_ques">
+                                    How do you use Kids-Zone with your students? How has Kids-Zone affected the way you
+                                    teach?
+                                </div>
+                                <div class="form_field_con">
+                                    <textarea class="qes_form" name="q-parent-1">
+                                        </textarea>
+                                </div>
+                            </div>
+                            <div class="form_field">
+                                <div class="form_field_ques">
+                                    How has Kids-Zone helped your students become more successful learners?
+                                </div>
+                                <div class="form_field_con">
+                                    <textarea class="qes_form" name="q-parent-2">
+                                        </textarea>
+                                </div>
+                            </div>
+                            <div class="form_field">
+                                <div class="form_field_ques">
+                                    What are your biggest challenges as a teacher?
+                                </div>
+                                <div class="form_field_con">
+                                    <textarea class="qes_form" name="q-parent-3">
+                                        </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_field">
+                        <div class="form_field_ques">
+                            How did you find out about Kids-Zone? What were you looking for at the time?
+                        </div>
+                        <div class="form_field_con">
+                            <textarea class="qes_form" name="q-all-0">
+                                </textarea>
+                        </div>
+                    </div>
+                    <div class="form_field">
+                        <div class="form_field_ques">
+                            Do you currently use any other educational websites or apps? Which ones?
+                        </div>
+                        <div class="form_field_con">
+                            <textarea class="qes_form" name="q-all-1">
+                                </textarea>
+                        </div>
+                    </div>
+                    <div class="form_field">
+                        <div class="form_field_ques">
+                            What do you like the most about Kids-Zone? Why?
+                        </div>
+                        <div class="form_field_con">
+                            <textarea class="qes_form" name="q-all-2">
+                                </textarea>
+                        </div>
+                    </div>
+                    <div class="form_field">
+                        <div class="form_field_ques">
+                            What subjects/lessons would you like to see Kids-Zone add?
+                        </div>
+                        <div class="form_field_con">
+                            <textarea class="qes_form" name="q-all-3">
+                                </textarea>
+                        </div>
+                    </div>
+                    <div class="form_field">
+                        <div class="form_field_ques">
+                            Do you have any additional comments or questions?
+                        </div>
+                        <div class="form_field_con">
+                            <textarea class="qes_form" name="q-all-4">
+                                </textarea>
+                        </div>
+                    </div>
+                    <div class="form_field">
+                        <div class="maywettop">
+                            May we share your comments with other members of the Kids-Zone community?
+                        </div>
+                        <div id="maywetop">
+                            <label for="aKey1" class="LABEL_E">
+                                <input type="radio" name="q-all-5"
+                                    value="Yes, you may share my comments with my name." />Yes, you may share my
+                                comments with my name.
+                            </label>
+                            <label for="aKey2" class="LABEL_E">
+                                <input type="radio" name="q-all-5"
+                                    value="Yes, you may share my comments, but please don't use my name." />Yes, you may
+                                share my comments, but please don't use my name.
+                            </label>
+                            <label for="aKey3" class="LABEL_E">
+                                <input type="radio" name="q-all-5" value="No, please don't share my comments." />No,
+                                please don't share my comments.
+                            </label>
+                        </div>
+                    </div>
+                    <div id="formsubmit">
+                        <button type="submit" id="submit">SUBMIT</button>
+                        <p class="policy">
+                            By clicking SUBMIT, you certify that you have read and agreed to our 
+                            <a href="aus_privacy_policy.html">Privacy Policy</a>.
+                        </p>
+                        <p class="policy">
+                            This site is protected by reCAPTCHA and the Google <a rel="noopener noreferrer"
+                                href="https://policies.google.com/privacy">Privacy Policy</a>
+                            and <a rel="noopener noreferrer" href="https://policies.google.com/terms">Terms of
+                                Service</a> apply.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var tabLinks = document.querySelectorAll(".tablinks");
+        var tabContent = document.querySelectorAll(".tabcontent");
+
+        tabLinks.forEach(function (el) {
+            el.addEventListener("click", openTabs);
+        });
+
+
+        function openTabs(el) {
+            var btn = el.currentTarget; // lắng nghe sự kiện và hiển thị các element
+            var electronic = btn.dataset.electronic; // lấy giá trị trong data-electronic
+
+            tabContent.forEach(function (el) {
+                el.classList.remove("active");
+            }); //lặp qua các tab content để remove class active
+
+            tabLinks.forEach(function (el) {
+                el.classList.remove("active");
+            }); //lặp qua các tab links để remove class active
+
+            document.querySelector("#" + electronic).classList.add("active");
+            // trả về phần tử đầu tiên có id="" được add class active
+
+            btn.classList.add("active");
+            // các button mà chúng ta click vào sẽ được add class active
+        }
+    </script>
+</body>
+
+</html>

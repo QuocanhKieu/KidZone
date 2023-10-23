@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="kidZone">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kid Zone</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css" />
+
+    <script src="./js/jquery-3.7.0.min.js"></script>
+
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/all.js"></script>
+    <script type="module" src="./js/ggMapModule.js"></script>
+
+    <script src="./js/angular.js"></script>
+    <script src="./js/angular-route.js"></script>
+    <script src="./js/angular-animate.js"></script>
+    <script src="./common-core/common-core-standard.module.js"></script>
+    <script src="./common-core/common-core-standard.component.js"></script>
+
+    <script src="./home/home.module.js"></script>
+    <script src="./home/home.component.js"></script>
+    <script src="./contact-us/contact-us.module.js"></script>
+    <script src="./contact-us/contact-us.component.js"></script>
+    <script src="./help/help.module.js"></script>
+    <script src="./help/help.component.js"></script>
+    <script src="./parent-teacher/parent-teacher.module.js"></script>
+    <script src="./parent-teacher/parent-teacher.component.js"></script>
+    <script src="./allGames-tab/all-games-tab.module.js"></script>
+    <script src="./allGames-tab/all-games-tab.component.js"></script>
+    <script src="./abcs-tab/abcs-tab.module.js"></script>
+    <script src="./abcs-tab/abcs-tab.component.js"></script>
+    <script src="./game-detail/game-detail.module.js"></script>
+    <script src="./game-detail/game-detail.component.js"></script>
+    <script src="./subscribe-join/subscribe-join.module.js"></script>
+    <script src="./subscribe-join/subscribe-join.component.js"></script>
+    <script src="./premium-tab/premium-tab-tab.module.js"></script>
+    <script src="./premium-tab/premium-tab.component.js"></script>
+
+    <script src="./kidZone.module.js"></script>
+    <script src="./kidZone.config.js"></script>
+  </head>
+  <body >
+    <span class="loader"></span>
+    <div class="curtain-loading" style="display: block !important"></div>
+    <header>
+      <nav class="navbar m-0 p-0">
+        <div
+          class="container-fluid justify-content-start navContainer p-0 flex-nowrap"
+        >
+          <a
+            class="navbar-brand position-relative me-2 me-sm-4 me-lg-0"
+            href="#!/home"
+          >
+          </a>
+          <nav
+            class="navbar-nav justify-content-start flex-row navSmall d-lg-none justify-content-between flex-grow-1 px-md-4 align-items-center"
+          >
+            <div
+              class="dropdown flex-grow-1 align-items-center flex-row position-static p-0"
+            >
+              <a
+                class="nav-link dropdown-toggle d-inline"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                data-bs-target="#dropdownMenu"
+                aria-expanded="false"
+                aria-controls="dropdownMenu"
+              >
+                Menu&nbsp&nbsp<i class="fa-solid fa-bars align-middle"></i>
+              </a>
+              <ul class="dropdown-menu position-absolute" id="dropdownMenu">
+                <li>
+                  <a class="dropdown-item" href="#!/commonCoreStandard"
+                    >Common Core Standards</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#!/parentTeacher"
+                    >Parents & Teachers</a
+                  >
+                </li>
+                <!-- <li><hr class="dropdown-divider"></li> -->
+                <li><a class="dropdown-item" href="#!/help">Help</a></li>
+                <li>
+                  <a class="dropdown-item" href="#!/contacUs">Contact Us</a>
+                </li>
+                <li>
+                  <a href="#!/subscribeJoin" class="dropdown-item" ng-show="!isUserLoggedIn"
+                    >Join Now For Premium</a
+                  >
+                </li>
+                <li style="background-color: #089478">
+                  <a
+                    class="dropdown-item"
+                    href="#!/premiumTab"
+                    ng-show="isUserLoggedIn"
+                    >Premium Games</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="searchBoxSmall p-0">
+              <p class="m-0">
+                <button
+                  class="btn"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSearch"
+                  aria-expanded="false"
+                  aria-controls="collapseSearch"
+                >
+                  Search <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </p>
+              <div
+                class="collapse position-absolute top-100 end-0 w-100"
+                style="
+                  z-index: 1;
+                  border: 1px solid grey;
+                  border-top: 0px solid transparent;
+                  box-shadow: 0px 2px 2px grey;
+                "
+                id="collapseSearch"
+              >
+                <form class="d-flex align-items-center" role="search">
+                  <input
+                    type="text"
+                    name="searchBox"
+                    id="search"
+                    class="border border-0 flex-grow-1 p-2"
+                    placeholder="Search KidZone"
+                  />
+                  <button
+                    class="btn btn-outline-success border border-0 bigSearchBtn"
+                    type="submit"
+                  >
+                    <i class="fa-solid fa-magnifying-glass pe-5"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="loginBtn btn mainLoginBtn"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+              ng-show="!$root.isUserLoggedIn"
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              class="loginBtn btn"
+              ng-show="$root.isUserLoggedIn"
+              data-bs-toggle="modal"
+              data-bs-target="#logoutModal"
+            >
+              <a>Logout</a>
+            </button>
+          </nav>
+          <nav
+            class="navbar-nav justify-content-start flex-row navBig d-none d-lg-flex flex-grow-1 align-items-center"
+          >
+            <form
+              class="d-flex justify-content-start flex-grow-0"
+              role="search"
+            >
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Search KidZone"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-outline-success bigSearchBtn"
+                type="submit"
+              >
+                <i class="fa-solid fa-magnifying-glass pe-3"></i>
+              </button>
+            </form>
+
+            <ul
+              class="pageContainer text-center d-none d-md-flex flex-row justify-content-around flex-grow-1 m-0 p-0 align-items-center"
+            >
+              <li class="">
+                <a class="nav-link ms-2" href="#!/commonCoreStandard"
+                  >Common Core<br />Standards</a
+                >
+              </li>
+              <li class="">
+                <a class="nav-link" href="#!/parentTeacher"
+                  >Parents &<br />
+                  Teachers</a
+                >
+              </li>
+              <li class="">
+                <a class="nav-link" href="#!/help">Help</a>
+              </li>
+              <li class="">
+                <a class="nav-link" href="#!/contacUs">Contact Us</a>
+              </li>
+              <li class="">
+                <a
+                  class="hnf-premium nav-link"
+                  href="#!/subscribeJoin"
+                  ng-show="!$root.isUserLoggedIn"
+                >
+                  <div class="shimmer-img-container">
+                    <div class="shimmer-img">
+                      <img
+                        src="images/shimmer-5e15b440b40d69d80b03.png"
+                        alt="Shimmer animation"
+                      />
+                    </div>
+                  </div>
+                  Join Now <br />
+                  For Premium</a
+                >
+                <a
+                  class="hnf-premium nav-link"
+                  href="#!/premiumTab"
+                  ng-show="$root.isUserLoggedIn"
+                >
+                  <div class="shimmer-img-container">
+                    <div class="shimmer-img">
+                      <img
+                        src="images/shimmer-5e15b440b40d69d80b03.png"
+                        alt="Shimmer animation"
+                      />
+                    </div>
+                  </div>
+                  Premium <br />
+                  Games</a
+                >
+              </li>
+              <li class="">
+                <button
+                  type="button"
+                  class="loginBtn btn mainLoginBtn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                  ng-show="!$root.isUserLoggedIn"
+                >
+                  Login
+                </button>
+                <button
+                  type="button"
+                  class="loginBtn btn"
+                  ng-show="$root.isUserLoggedIn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#logoutModal"
+                >
+                  <a>Logout</a>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </nav>
+    </header>
+
+    <div class="view-animate-container">
+      <div ng-view class="view-animate"></div>
+    </div>
+
+    <footer class="containerParent_1">
+      <div class="container d-flex flex-column footer-container gap-4">
+        <div class="footer-one lh-lg text-center">
+          <h1><img src="./images/HomePage/Logo03.png" alt="Logo03"/></h1>
+          <h2 class="font-color mt-5">Educational for Kids!</h2>
+          <p class="mt-3 fs-1">Featured in</p>
+          <div
+            class="footer-one-logo d-flex justify-content-center fs-1 font-color"
+          >
+            <div><i class="fa-brands fa-apple"></i></div>
+            <div><i class="fa-brands fa-facebook"></i></div>
+            <div><i class="fa-brands fa-wizards-of-the-coast"></i></div>
+            <div><i class="fa-brands fa-the-red-yeti"></i></div>
+            <div><i class="fa-brands fa-firefox"></i></div>
+            <div><i class="fa-brands fa-tiktok"></i></div>
+          </div>
+        </div>
+        <div class="containerParent_2">
+          <div
+            class="footer-two container d-flex justify-content-evenly gap-4 lh-base p-4"
+          >
+            <div class="footer-two-list fw-bold font-color">
+              OUR CONTENT
+              <ul>
+                <li><a href="">ABC..</a></li>
+                <li><a href="">123 Number</a></li>
+                <li><a href="">Multiplication table</a></li>
+                <li><a href="">Nursery Rhymes</a></li>
+                <li><a href="">Days</a></li>
+                <li><a href="">Month</a></li>
+                <li><a href="">item7</a></li>
+                <li><a href="">item8</a></li>
+              </ul>
+            </div>
+            <div class="footer-two-list fw-bold font-color">
+              PARENTS & TEACHERS
+              <ul>
+                <li><a href="">Purchase Gift Cards</a></li>
+                <li><a href="">Redeem Gift Cards</a></li>
+                <li><a href="">Blog</a></li>
+              </ul>
+            </div>
+            <div class="footer-two-list fw-bold font-color">
+              HELP
+              <ul>
+                <li><a href="">LogIn</a></li>
+                <li><a href="">Join Now</a></li>
+                <li><a href="">FAQs</a></li>
+              </ul>
+            </div>
+            <div class="footer-two-list fw-bold font-color">
+              CONTACT US
+              <ul>
+                <li><a href="">Facebook</a></li>
+                <li><a href="">Twitch</a></li>
+                <li><a href="">Zalo</a></li>
+                <li><a href="">Instagram</a></li>
+                <li><a href="">Telegram</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-three text-center lh-base pt-4">
+          <button
+            type="button"
+            class="button-flat-color cyan round dimensional text"
+          >
+            <a href="#!/subscribeJoin"> JOIN&nbsp;NOW<br />For&nbsp;Premium </a>
+          </button>
+          <h4 class="fw-lighter">
+            Copyright 2023 Kiz-Zone.com, L.L.C., a division of IXL Learning •
+            All Rights Reserved
+          </h4>
+          <img
+            src="./img/footer_logo1.jpg"
+            alt="IXL"
+            class="footer-copyright-ixl"
+            width="96px"
+            height="37px"
+          />
+          <div class="footer-copyright-kidsafe">
+            <img
+              src="./img/footer_logo2.jpg"
+              width="95px"
+              height="42px"
+              alt=""
+            />
+          </div>
+          <a id="back-to-top" ng-click="toTop()"
+            ><i class="fa-solid fa-angle-up"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div
+      class="modal fade loginModal border-0 p-4"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="AccountAccess"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog loginDialog m-auto">
+        <div class="modal-content border-0 rounded-5 overflow-hidden">
+          <div
+            class="modal-header position-relative d-flex justify-content-center loginHeader"
+          >
+            <h1 class="modal-title modalHeading fw-bold" id="AccountAccess">
+              Account Access
+            </h1>
+            <button
+              type="button"
+              class="btn-close position-absolute closeModal"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <h3 class="bodyHead">This login is for all subscribers</h3>
+            <form
+              action=""
+              class="fs-2 p-2 formForContact row"
+              id="loginForm"
+            >
+              <div class="col-12">
+                <input
+                  class="form-control fs-2 my-3"
+                  type="email"
+                  name="email"
+                  id="email"
+                  ng-model="$root.LoginEmail"
+                  placeholder="Email Address / Access Name"
+                  required
+                />
+                <div class="hi" ng-show="isUserNotFound">
+                  User not Found.
+                </div>
+              </div>
+              <div class="col-12">
+                <input
+                  class="form-control fs-2 my-3"
+                  type="password"
+                  name="password"
+                  id="password"
+                  autocomplete="on"
+                  ng-model="$root.LoginPassword"
+                  placeholder="Password / Access Code"
+                  required
+                />
+                <!-- <div class="emailHelper helper">
+                  Email needs "gmail.com" suffix
+                </div> -->
+                <div class="" ng-show="isIncorrectPassWord">
+                  Incorrect Password.
+                </div>
+              </div>
+              <button
+                type="submit"
+                class="btn btn-secondary loginModalBtn text-nowrap fs-4"
+                ng-click="reloadPage()"
+              >
+                LOG IN
+              </button>
+            </form>
+            <div class="forgot">
+              <a href="#">Forgot password</a>
+            </div>
+            <div class="form-terms">
+              This site is protected by reCAPTCHA and the Google
+              <a
+                rel="noopener noreferrer"
+                href="https://policies.google.com/privacy"
+                >Privacy Policy</a
+              >
+              and
+              <a
+                rel="noopener noreferrer"
+                href="https://policies.google.com/terms"
+                >Terms of Service</a
+              >
+              apply.
+            </div>
+          </div>
+          <div
+            class="modal-footer d-block text-center border-0 pb-4 loginFooter"
+          >
+            <h3 class="footHead fw-bold mb-3">Not a subscriber?</h3>
+            <button
+              type="button"
+              class="btn btn-secondary joinBtn fs-3"
+              data-bs-dismiss="modal"
+            >
+              <a
+                href="#!/subscribeJoin"
+                class="join d-block"
+                style="text-decoration: none; color: unset"
+                >JOIN NOW</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Login Modal -->
+    <!-- Logout Modal -->
+    <div
+      class="modal fade logoutModal border-0 p-4"
+      id="logoutModal"
+      tabindex="-1"
+      aria-labelledby="Logout"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog loginDialog m-auto">
+        <div class="modal-content border-0 rounded-5 overflow-hidden">
+          <div
+            class="modal-header position-relative d-flex justify-content-center loginHeader"
+          >
+            <h1 class="modal-title modalHeading fw-bold" id="Logout">
+              Logout?
+            </h1>
+            <button
+              type="button"
+              class="btn-close position-absolute closeModal"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >a
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div
+            class="modal-footer d-block text-center border-0 pb-4 loginFooter"
+          >
+            <button
+              type="button"
+              class="btn btn-secondary joinBtn fs-3 d-block mb-4 mt-2"
+              data-bs-dismiss="modal"
+              id="yesToLogout"
+              ng-click="reloadPage()"
+            >
+              <a
+                ng-click="logOut()"
+                class="join d-block fw-bold mainLogoutBtn"
+                style="text-decoration: none; color: unset"
+                >YES</a
+              >
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary joinBtn fs-3 d-block"
+              data-bs-dismiss="modal"
+            >
+              <a
+                class="join d-block fw-bold"
+                style="text-decoration: none; color: unset"
+                >NO</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
