@@ -47,7 +47,7 @@ $(function () {
       console.log("disqualified");
     } else {
       console.log("qualified");
-      $("form").hide();
+      $("#FormContact").hide();
       $("#formTitle").hide();
       // $(".contactForm").append(`<p class="userInfo p-5 fs-2">
       //     Hi ${name}.<br>
