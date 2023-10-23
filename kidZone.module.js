@@ -114,6 +114,7 @@ angular
         
         $("#yesToLogout").on('click', function(event){
           $rootScope.logOut()
+          $rootScope.reloadPage();
         } )
 
         
@@ -133,6 +134,7 @@ angular
                 $rootScope.isUserLoggedIn = true;
               });
               alert("Login Success.")
+              $rootScope.reloadPage();
               return true;
             } else {
               // Incorrect password
